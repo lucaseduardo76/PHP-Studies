@@ -15,7 +15,7 @@
             <br/>
             <input type="text" name="name">
             
-            <button type="submit">Cadastrar</button>
+            <button type="submit" style='cursor: pointer;'>Cadastrar</button>
         </label>
 
     </form>
