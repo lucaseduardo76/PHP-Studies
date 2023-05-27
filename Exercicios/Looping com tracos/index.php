@@ -7,4 +7,4 @@
         echo "<br/>";
     };
 
-    //exercicio é fazer 10 linha com 10 traços em cada.
+    //exercicio é fazer 10 linha com 10 traços em cada
