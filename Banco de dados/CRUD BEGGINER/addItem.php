@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<form action="addItemConfig.php" method="post">
+<form action="addItem_action.php" method="post">
 
     <label>
         Digite o nome:
