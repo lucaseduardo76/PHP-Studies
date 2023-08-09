@@ -1,15 +1,24 @@
 <?php
 
     class Usuarios {
+        private $id;
         private $name;
         private $email;
+
+        public function getId(){
+            return $this->$id;
+        }
+
+        public function setId($n){
+            $this->id = trim($n);
+        }
 
         public function getName(){
             return $this->$name;
         }
 
         public function setName($n){
-            $this->name = $n;
+            $this->name = trim($n);
         }
 
 
