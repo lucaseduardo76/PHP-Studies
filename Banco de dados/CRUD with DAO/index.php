@@ -5,6 +5,9 @@ require 'dao/usuarioDaoMysql.php';
 $usuarioDao = new UsuarioDaoMysql($pdo);
 $lista[] = $usuarioDao->findAll();
 
+
+
+
 //$lista = [];
 //$sql = $pdo->query('SELECT * FROM usuarios');
 
@@ -21,14 +24,14 @@ $lista[] = $usuarioDao->findAll();
         <td>EMAIL</td>
         <td>AÇÕES</td>
     </tr>
-    <?php foreach($lista as $usuario): ?>
+    <?php foreach($lista[0] as $usuario): ?>
         <tr>
-            <td style="padding:5px;"><?= $usuario->getId() ?></td>
-            <td padding="5px"><?= $usuario->getName() ?></td>
-            <td padding="5px"><?= $usuario->getEmail() ?></td>
+            <td style="padding:5px;"><?= $usuario->getId(); ?></td>
+            <td padding="5px"><?= $usuario->getName(); ?></td>
+            <td padding="5px"><?= $usuario->getEmail(); ?></td>
             <td>
-                <a href="editar.php?id=<?= $usuario->getId() ?>">[editar]</a>
-                <a href="excluir.php?id=<?= $usuario->getId() ?>" onclick="return confirm('Tem certeza que deseja excluir?')">[excluir]</a>
+                <a href="editar.php?id=<?= $usuario->getId(); ?>">[editar]</a>
+                <a href="excluir.php?id=<?= $usuario->getId(); ?>" onclick="return confirm('Tem certeza que deseja excluir?')">[excluir]</a>
             </td>
         </tr>
     <?php endforeach; ?>         

@@ -5,13 +5,13 @@
     $info = [];
 
     if($id){
-        $sql = $pdo->prepare("SELECT * FROM usuarios WHERE id = :id");
+        $sql = $pdo->prepare("SELECT * FROM musicos WHERE id = :id");
         $sql->bindValue(":id", $id);
         $sql->execute();
 
         if($sql->rowCount() > 0){
             $info = $sql->fetch(PDO::FETCH_ASSOC);
-            $current_name = $info["nome"];
+            $current_name = $info["name"];
             $current_email = $info["email"];
         }else{
             header("Location: index.php");

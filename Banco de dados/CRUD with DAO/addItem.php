@@ -11,7 +11,7 @@
     <br/>
     <br/>
     <label>
-        Digite o nome:
+        Digite o email:
         <br/>
         <input type="email" name='email'>
     </label>

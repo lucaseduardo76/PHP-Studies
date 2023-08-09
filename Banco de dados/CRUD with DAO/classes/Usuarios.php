@@ -6,7 +6,7 @@
         private $email;
 
         public function getId(){
-            return $this->$id;
+            return $this->id;
         }
 
         public function setId($n){
@@ -14,7 +14,7 @@
         }
 
         public function getName(){
-            return $this->$name;
+            return $this->name;
         }
 
         public function setName($n){
@@ -22,8 +22,8 @@
         }
 
 
-         public function getEmail(){
-            return $this->$email;
+        public function getEmail(){
+            return $this->email;
         }
 
         public function setEmail($n){
@@ -33,9 +33,9 @@
     }
 
     interface UsuarioDAO {
-        public function add(Usuario $u);
+        public function add(Usuarios $u);
         public function findAll();
         public function findById($id);
-        public function update(Usuario $u);
+        public function update(Usuarios $u);
         public function delete($id);
     }
