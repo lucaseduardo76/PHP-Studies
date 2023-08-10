@@ -1,42 +1,36 @@
 <?php 
     require 'config.php';
+    require 'dao/UsuarioDaoMysql.php';
+    
+    $u_dao = new UsuarioDaoMysql($pdo); 
     
     $id = filter_input(INPUT_GET, 'id');
-    $info = [];
+    $user = false;
 
-    if($id){
-        $sql = $pdo->prepare("SELECT * FROM musicos WHERE id = :id");
-        $sql->bindValue(":id", $id);
-        $sql->execute();
-
-        if($sql->rowCount() > 0){
-            $info = $sql->fetch(PDO::FETCH_ASSOC);
-            $current_name = $info["name"];
-            $current_email = $info["email"];
-        }else{
-            header("Location: index.php");
-            exit;
-        }
-    }else{
+    if(true){
+        $user = $u_dao->findById($id);
+    }
+    
+    if($user == false){
         header("Location: index.php");
         exit;
     };
     ?>
 
 <form action="editar_action.php" method="post">
-    <input type="hidden" name="id" value="<?= $id ?>">
+    <input type="hidden" name="id" value="<?= $user->getId() ?>">
 
 <label>
     Digite o nome:
     <br/>
-    <input type="text" name='name'  value="<?= $current_name ?>" >
+    <input type="text" name='name'  value="<?= $user->getName() ?>" >
 </label>
 <br/>
 <br/>
 <label>
     Digite o nome:
     <br/>
-    <input type="email" name='email' value=<?= $current_email; ?>>
+    <input type="email" name='email' value=<?= $user->getEmail(); ?>>
 </label>
 <br/>
 <input type="submit">

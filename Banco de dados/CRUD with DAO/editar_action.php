@@ -1,25 +1,25 @@
 <?php
 session_start();
 require 'config.php';
-$nome = ucwords(strtolower(filter_input(INPUT_POST, 'name')));
+require 'classes/Usuarios.php';
+require 'dao/UsuarioDaoMysql.php';
+$u_dao = new UsuarioDaoMysql($pdo); 
+
+$name = ucwords(strtolower(filter_input(INPUT_POST, 'name')));
 $email = strtolower(filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL));
 $id = filter_input(INPUT_POST, 'id');
 
-if($nome && $email && $id){
-   
+if($name && $email && $id){
+    
+    $u = new Usuarios();
+    $u->setId($id);
+    $u->setName($name);
+    $u->setEmail($email);
 
-        $up_data = $pdo->prepare("UPDATE musicos SET name = :name, email = :email WHERE id = :id");
-
-        $up_data -> bindValue(':id', $id);
-        $up_data -> bindValue(':name', $nome);
-        $up_data -> bindValue(':email', $email);
-        $up_data -> execute();
- 
- 
+    $u_dao->update($u); 
   
-header('Location: index.php');
-exit;
-
+    header('Location: index.php');
+    exit;
 
 }else{
     header('Location: editar.php');

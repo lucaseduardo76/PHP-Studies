@@ -4,16 +4,6 @@ require 'dao/usuarioDaoMysql.php';
 
 $usuarioDao = new UsuarioDaoMysql($pdo);
 $lista[] = $usuarioDao->findAll();
-
-
-
-
-//$lista = [];
-//$sql = $pdo->query('SELECT * FROM usuarios');
-
-//if($sql->rowCount() > 0){
-//    $lista = $sql->fetchAll( PDO::FETCH_ASSOC );
-//}
 ?>
 
 <a href="addItem.php">Clique aqui para adicionar itens</a>
