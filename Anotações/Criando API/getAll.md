@@ -1,5 +1,8 @@
 Primeira coisa que devemos fazer é verificar o método que foi enviado para ter certeza que o metodo é igual ao desse arquivo
 
+
+require('../config.php);
+
 $method = strtolower($_SERVER['REQUEST_METHOD']);
 
 if($method === 'get'){
@@ -19,3 +22,5 @@ if($method === 'get'){
 }else{
     $array[error] = 'Metodo não permitido';
 }
+
+require('../return.php);
