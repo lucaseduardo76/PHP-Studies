@@ -6,7 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="../actions/newUserAction.php" method="post">
+
+
+
+    <form action="../actions/updateUserAction.php" method="post">
 
         <label>
             <h4>
@@ -25,7 +28,7 @@
                 <option value="0">Bebês</option>
                 <option value="1">Crianças</option>
                 <option value="2">Meninos</option>
-                <option value="3" selected>Moços</option>                
+                <option value="3">Moços</option>                
             </select>
         </label>
 

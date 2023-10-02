@@ -7,7 +7,8 @@
 </head>
 <body>
     
-    <a href="views/newUser.php">Adicionar novo usuario</a>
+    <a href="views/users.php">Visualizar todos os usuarios</a>
+    
 
 </body>
 </html>
