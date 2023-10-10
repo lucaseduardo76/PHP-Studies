@@ -8,27 +8,34 @@ $id = filter_input(INPUT_GET, 'id');
 $data = simplexml_load_file('users.xml');
 $array=[];
 
-for($i = 0; i < count($xml->children()); $i++){
+foreach($data->user as $item){
 
-    
 
-    if($data[$i]->id !== $id){
+    if($item->id == $id){
         
         $u = ['id' => $item->id, 
                 'name' => $item->name, 
                 'description' => $item->description];
     
         $array[] = $u;
+        $dom = dom_import_simplexml($item);
+        $dom->parentNode->removeChild($dom);
+        $data->asXML('users.xml');
+
+        echo 'ENTROU AQUI';
     }
 
-    $dom = dom_import_simplexml($item);
-    $dom->parentNode->removeChild($dom);
-    $data->asXML('users.xml');
+    echo $item->id.' - ';
+    echo $item->name.' - ';
+    echo $item->description.' </br>';
+
+    
 }        
 
 
 
-
+header('Location: ler-xml.php');
+exit;
 /*foreach($array as $u){
      $novoRegistro = $this->xmlFile->addChild('usuario');
      $novoRegistro->addChild('id', $u->getId());
@@ -37,5 +44,3 @@ for($i = 0; i < count($xml->children()); $i++){
  
      $this->xmlFile->asXML($this->path);
  }*/
-header('Location: ler-xml.php');
-exit;
