@@ -79,9 +79,7 @@ class UsuarioDaoXml implements UsuarioDAO{
         $sql -> execute();*/
     }
 
-/*$xml = simplexml_load_file($xmlFile);
-    unset($xml->registro[$id]);
-    $xml->asXML($xmlFile);*/
+
     public function delete($id) {
 
 

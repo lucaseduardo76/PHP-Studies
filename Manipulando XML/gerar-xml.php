@@ -24,30 +24,28 @@ $emailNode->appendChild($emailNodeValue);
 
 //NÓ DE USUARIO
 $array = [];
-for($i = 0; $i <= 0; $i++){
-    $userNode = $dom->createElement('user'.$i);
+
+$rootNode = $dom->createElement('root');
+for($i = 0; $i <= 1; $i++){
+    $userNode = $dom->createElement('user');
     $userNode->appendChild($idNode);
     $userNode->appendChild($nomeNode);
     $userNode->appendChild($emailNode);
 
-    $array[] = $userNode;
+    $rootNode->($item);
 };
 print_r($array);
 //INSTANCIA DO NÓ ROOT - NÓ PRINCIPAL
-$rootNode = $dom->createElement('root');
-foreach($array as $item){
-    $rootNode->appendChild($item);
-}
 
 $dom->appendChild($rootNode);
 
 
 
 //IMPRIM O XML NA TELA
-//echo $dom->saveXML(); 
+echo $dom->saveXML(); 
 
 //SALVA CONTEUDO EM UM ARQUIVO
 
-$dom->save('aquivo.xml');
+$dom->save('aqui.xml');
 
 
