@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <user0>
+  <user>
     <id>10</id>
     <nome>Lucas Eduardo Souza da Silva</nome>
     <email>lucas@gmail.com</email>
-  </user0>
+  </user>
+
 </root>

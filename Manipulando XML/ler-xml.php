@@ -3,6 +3,13 @@
 //STRING XML
 $data = simplexml_load_file('aquivo.xml');
 
-echo 'ID: ' .$data->user0->id."<br/>";
-echo 'NOME: ' .$data->user0->nome."<br/>";
-echo 'EMAIL: ' .$data->user0->email."<br/>";
+
+foreach($data as $item){
+
+    if($item->id == 10){
+    echo $item->id. 'asdsdgdgfdgfdgfsd';
+    }
+}
+echo '</br></br>ID: ' .$data->user->id."<br/>";
+echo 'NOME: ' .$data->user->nome."<br/>";
+echo 'EMAIL: ' .$data->user->email."<br/>";
