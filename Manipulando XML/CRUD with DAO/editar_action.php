@@ -2,7 +2,7 @@
 session_start();
 require 'config.php';
 require 'classes/Usuarios.php';
-require 'dao/UsuarioDaoXml.php';
+require 'dao/UsuarioDaoMysql.php';
 $u_dao = new UsuarioDaoXml($pdo); 
 
 $name = ucwords(strtolower(filter_input(INPUT_POST, 'name')));

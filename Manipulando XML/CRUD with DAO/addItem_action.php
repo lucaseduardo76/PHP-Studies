@@ -13,7 +13,6 @@ if($nome && $email){
     $u = new Usuarios();
     $u->setName($nome);
     $u->setEmail($email);
-    $u->setId(8);
     
     $u_dao->add($u);
 

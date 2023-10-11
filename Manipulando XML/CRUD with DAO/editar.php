@@ -2,7 +2,7 @@
     require 'config.php';
     require 'dao/UsuarioDaoMysql.php';
     
-    $u_dao = new UsuarioDaoMysql($pdo); 
+    $u_dao = new UsuarioDaoXml($pdo); 
     
     $id = filter_input(INPUT_GET, 'id');
     $user = false;
