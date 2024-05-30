@@ -1,4 +1,4 @@
-Primeira coisa que devemos fazer é verificar o método que foi enviado para ter certeza que o metodo é igual ao desse arquivo
+Primeira coisa que devemos fazer é verificar o método que foi enviado para ter certeza que o metodo é igual ao desse arquivo local
 
 
 require('../config.php);
