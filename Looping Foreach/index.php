@@ -4,7 +4,8 @@
         'oleo',
         'massa',
         'farinha',
-        'fome'
+        'fome',
+'carne'
     ];
 
     foreach($ingredientes as $item){
